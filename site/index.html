@@ -8,148 +8,163 @@
   <link rel="stylesheet" type="text/css" href="bundle.css">
  </head>
  <body>
- <div class="main"> 
+ <div class="main" unselectable="on"> 
      <div class="sudoku">
      <div class="header">
          <h1> Sudoku </h1>
      </div>
          <table class="sudoku-grid centered">
-             <tr class='sudoku-row'>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
+
+             <tr class='sudoku-row' data-row="0">
+                 <td> <input type="text" data-column="0" maxlength="1"></td>
+                 <td> <input type="text" data-column="1" maxlength="1"></td>
+                 <td> <input type="text" data-column="2" maxlength="1"></td>
+                 <td> <input type="text" data-column="3" maxlength="1"></td>
+                 <td> <input type="text" data-column="4" maxlength="1"></td>
+                 <td> <input type="text" data-column="5" maxlength="1"></td>
+                 <td> <input type="text" data-column="6" maxlength="1"></td>
+                 <td> <input type="text" data-column="7" maxlength="1"></td>
+                 <td> <input type="text" data-column="8" maxlength="1"></td>
+                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
-             <tr class='sudoku-row'>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
+             <tr class='sudoku-row' data-row="1">
+                 <td> <input type="text" data-column="0" maxlength="1"></td>
+                 <td> <input type="text" data-column="1" maxlength="1"></td>
+                 <td> <input type="text" data-column="2" maxlength="1"></td>
+                 <td> <input type="text" data-column="3" maxlength="1"></td>
+                 <td> <input type="text" data-column="4" maxlength="1"></td>
+                 <td> <input type="text" data-column="5" maxlength="1"></td>
+                 <td> <input type="text" data-column="6" maxlength="1"></td>
+                 <td> <input type="text" data-column="7" maxlength="1"></td>
+                 <td> <input type="text" data-column="8" maxlength="1"></td>
+                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
-
-             <tr class='sudoku-row'>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
+             <tr class='sudoku-row' data-row="2">
+                 <td> <input type="text" data-column="0" maxlength="1"></td>
+                 <td> <input type="text" data-column="1" maxlength="1"></td>
+                 <td> <input type="text" data-column="2" maxlength="1"></td>
+                 <td> <input type="text" data-column="3" maxlength="1"></td>
+                 <td> <input type="text" data-column="4" maxlength="1"></td>
+                 <td> <input type="text" data-column="5" maxlength="1"></td>
+                 <td> <input type="text" data-column="6" maxlength="1"></td>
+                 <td> <input type="text" data-column="7" maxlength="1"></td>
+                 <td> <input type="text" data-column="8" maxlength="1"></td>
+                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
-             <tr class='sudoku-row'>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
+             <tr class='sudoku-row' data-row="3">
+                 <td> <input type="text" data-column="0" maxlength="1"></td>
+                 <td> <input type="text" data-column="1" maxlength="1"></td>
+                 <td> <input type="text" data-column="2" maxlength="1"></td>
+                 <td> <input type="text" data-column="3" maxlength="1"></td>
+                 <td> <input type="text" data-column="4" maxlength="1"></td>
+                 <td> <input type="text" data-column="5" maxlength="1"></td>
+                 <td> <input type="text" data-column="6" maxlength="1"></td>
+                 <td> <input type="text" data-column="7" maxlength="1"></td>
+                 <td> <input type="text" data-column="8" maxlength="1"></td>
+                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
-             <tr class='sudoku-row'>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
+             <tr class='sudoku-row' data-row="4">
+                 <td> <input type="text" data-column="0" maxlength="1"></td>
+                 <td> <input type="text" data-column="1" maxlength="1"></td>
+                 <td> <input type="text" data-column="2" maxlength="1"></td>
+                 <td> <input type="text" data-column="3" maxlength="1"></td>
+                 <td> <input type="text" data-column="4" maxlength="1"></td>
+                 <td> <input type="text" data-column="5" maxlength="1"></td>
+                 <td> <input type="text" data-column="6" maxlength="1"></td>
+                 <td> <input type="text" data-column="7" maxlength="1"></td>
+                 <td> <input type="text" data-column="8" maxlength="1"></td>
+                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
-             <tr class='sudoku-row'>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
+             <tr class='sudoku-row' data-row="5">
+                 <td> <input type="text" data-column="0" maxlength="1"></td>
+                 <td> <input type="text" data-column="1" maxlength="1"></td>
+                 <td> <input type="text" data-column="2" maxlength="1"></td>
+                 <td> <input type="text" data-column="3" maxlength="1"></td>
+                 <td> <input type="text" data-column="4" maxlength="1"></td>
+                 <td> <input type="text" data-column="5" maxlength="1"></td>
+                 <td> <input type="text" data-column="6" maxlength="1"></td>
+                 <td> <input type="text" data-column="7" maxlength="1"></td>
+                 <td> <input type="text" data-column="8" maxlength="1"></td>
+                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
-             <tr class='sudoku-row'>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
+             <tr class='sudoku-row' data-row="6">
+                 <td> <input type="text" data-column="0" maxlength="1"></td>
+                 <td> <input type="text" data-column="1" maxlength="1"></td>
+                 <td> <input type="text" data-column="2" maxlength="1"></td>
+                 <td> <input type="text" data-column="3" maxlength="1"></td>
+                 <td> <input type="text" data-column="4" maxlength="1"></td>
+                 <td> <input type="text" data-column="5" maxlength="1"></td>
+                 <td> <input type="text" data-column="6" maxlength="1"></td>
+                 <td> <input type="text" data-column="7" maxlength="1"></td>
+                 <td> <input type="text" data-column="8" maxlength="1"></td>
+                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
-             <tr class='sudoku-row'>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
+             <tr class='sudoku-row' data-row="7">
+                 <td> <input type="text" data-column="0" maxlength="1"></td>
+                 <td> <input type="text" data-column="1" maxlength="1"></td>
+                 <td> <input type="text" data-column="2" maxlength="1"></td>
+                 <td> <input type="text" data-column="3" maxlength="1"></td>
+                 <td> <input type="text" data-column="4" maxlength="1"></td>
+                 <td> <input type="text" data-column="5" maxlength="1"></td>
+                 <td> <input type="text" data-column="6" maxlength="1"></td>
+                 <td> <input type="text" data-column="7" maxlength="1"></td>
+                 <td> <input type="text" data-column="8" maxlength="1"></td>
+                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
-             <tr class='sudoku-row'>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
+             <tr class='sudoku-row' data-row="8">
+                 <td> <input type="text" data-column="0" maxlength="1"></td>
+                 <td> <input type="text" data-column="1" maxlength="1"></td>
+                 <td> <input type="text" data-column="2" maxlength="1"></td>
+                 <td> <input type="text" data-column="3" maxlength="1"></td>
+                 <td> <input type="text" data-column="4" maxlength="1"></td>
+                 <td> <input type="text" data-column="5" maxlength="1"></td>
+                 <td> <input type="text" data-column="6" maxlength="1"></td>
+                 <td> <input type="text" data-column="7" maxlength="1"></td>
+                 <td> <input type="text" data-column="8" maxlength="1"></td>
+                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
-
-             <tr class='sudoku-row'>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
-                 <td> <input type="number" min='0' max='9' step='1'></td>
+             <tr class='sudoku-row' data-row="9">
+                 <td> <input type="text" data-column="0" maxlength="1"></td>
+                 <td> <input type="text" data-column="1" maxlength="1"></td>
+                 <td> <input type="text" data-column="2" maxlength="1"></td>
+                 <td> <input type="text" data-column="3" maxlength="1"></td>
+                 <td> <input type="text" data-column="4" maxlength="1"></td>
+                 <td> <input type="text" data-column="5" maxlength="1"></td>
+                 <td> <input type="text" data-column="6" maxlength="1"></td>
+                 <td> <input type="text" data-column="7" maxlength="1"></td>
+                 <td> <input type="text" data-column="8" maxlength="1"></td>
+                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
          </table>
      </div>
  </div>
+
+     <div class='number-selector'>
+         <div class='arrow-up'> </div>
+         <div class='first-item number-selector-item' data-value="0"> 0 </div>
+         <div class='number-selector-item' data-value="1"> 1 </div>
+         <div class='number-selector-item' data-value="2"> 2 </div>
+         <div class='number-selector-item' data-value="3"> 3 </div>
+         <div class='number-selector-item' data-value="4"> 4 </div>
+         <div class='number-selector-item' data-value="5"> 5 </div>
+         <div class='number-selector-item' data-value="6"> 6 </div>
+         <div class='number-selector-item' data-value="7"> 7 </div>
+         <div class='number-selector-item' data-value="8"> 8 </div>
+         <div class='number-selector-item' data-value="9"> 9 </div>
+     </div>
+
  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script type="text/javascript" src="bundle.js"></script>
+ <script type="text/javascript" src="https//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+ <script type="text/javascript" src="bundle.js"></script>
  </body>
 </html>

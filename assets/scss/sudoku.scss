@@ -1,6 +1,13 @@
+$dark:  #444444;
+$blue:  #2DB6CF;
+$white: #FFFFFF;
+$light: #999999;
+
 html, body {
     width: 100%;
     height: 100%;
+    font-size: 62.5%;
+    font-family: Arial,sans-serif;
 }
 
 %unselectable {
@@ -11,33 +18,58 @@ html, body {
     user-select: none;
 }
 
+%sudoku-cell {
+    font-size: 7rem;
+    text-align: center;
+    display: table-cell;
+    width: 9rem;
+    height: 9rem;
+}
+
+%horizontallyCenter {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+}
+
 .main {
     @extend %unselectable;
+    position: absolute;
     width: 100%;
     height: 100%;
+}
+
+.sudoku {
+    padding-top:5rem;
+    height: 88rem;
     position: relative;
 }
+
 .centered {
-   width: 700px;
-   height: 700px;
-   position: absolute;
-   left: 50%;
-   top: 46%; 
-   margin-left: -350px;
-   margin-top: -350px;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 1rem;
 }
 
 .sudoku-grid {
-    border-width: 1px;
+    border-width: 0.1rem;
     border-color: black;
     border-style: solid;
+    table-layout: fixed;
+    width: 81rem;
+    height: 81rem;
 }
 
-%sudoku-cell {
-    font-size: 38px;
-    width:65px;
-    height:65px;
-    text-align: center;
+.sudoku-row td:nth-child(3n+4) {
+    border-left-width: 0.2rem;
+}
+
+.sudoku-row:nth-child(3n) {
+    border-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: 0.2rem;
 }
 
 .sudoku-row input {
@@ -49,58 +81,132 @@ html, body {
 }
 
 .sudoku-row td {
-    border-width: 1px;
+    @extend %sudoku-cell;
+    border-width: 0.1rem;
     border-color: black;
     border-style: solid;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-}
-
 h1 {
-    font-size: 3em;
-    text-align: center;
+    @extend %horizontallyCenter;
+    font-family: Arial,sans-serif;
+    top:0;
+    padding: 1rem 0;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 .arrow-up {
     position: absolute;
-    left: 315px;
-    top: -15px;
-	width: 0; 
-	height: 0; 
-	border-left: 15px solid transparent;
-	border-right: 15px solid transparent;
-	border-bottom: 15px solid black;
+    left: 0;
+    top: -1.5rem;
+	width: 0;
+	height: 0;
+	border-left: 1.5rem solid transparent;
+	border-right: 1.5rem solid transparent;
+	border-bottom: 1.5rem solid black;
 }
 
 .number-selector {
     @extend %unselectable;
     position: absolute;
-    left: -10000000000000000px;
+    left: -1000000rem;
+    width: 83rem;
+    height: 8rem;
+    z-index: 99;
 }
 
 .number-selector-item {
     @extend %unselectable;
     @extend %sudoku-cell;
     background-color: white;
-    border-width: 1px;
+    border-width: 0.1rem;
     border-color: black;
     border-style: solid solid solid none;
-    margin-top: 13px;
-    vertical-align: middle; 
+    margin-top: 1.3rem;
+    vertical-align: middle;
     display: table-cell;
 }
 
 .first-item {
-    border-width: 1px;
+    border-width: 0.1rem;
     border-color: black;
     border-left-style: solid;
 }
 
-.number-selector-item.highlighted {
-    background-color: yellow !important;
+.number-selector-item.highlighted, input.highlighted {
+    background-color: yellow;
+}
+
+.number-selector-item.error, input.error {
+    background-color: red;
+}
+// hiding the default jquery mobile loader
+.ui-loader {
+    display:none;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}
+input:disabled {
+    -webkit-text-fill-color:black;
+    font-color: black;
+    -webkit-opacity: 1;
+}
+
+.button-container {
+    @extend %horizontallyCenter;
+    bottom: 2rem;
+}
+
+.button {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: $dark;
+  font-weight: 700;
+  border: 0 none;
+  border-radius: 0.2rem;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 2rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  text-transform: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  width: 41rem;
+  font-family: Arial,sans-serif;
+  text-align: center; /* DELETE WHEN WIDTH AUTO */
+  &.dark {
+    background: none repeat scroll 0 0 $light;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $dark;
+      color: $white;
+    }
+  }
+  &.light {
+    background: none repeat scroll 0 0 $light;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $blue;
+      color: $white;
+    }
+  }
+}
+
+@media (max-width: 51rem) {
+    .sudoku {
+        height: 93rem;
+    }
+    .button {
+       width: 80.5rem;
+    }
 }

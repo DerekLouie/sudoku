@@ -1,12 +1,18 @@
-(function() {
+// clear button?
+// (function() {
     var rows = [],
     columns = [],
-    isMouseDown = false,
     lastHighlighted,
     highlightedValue,
     inputTarget,
+    currentTarget,
     numberSelector = $('.number-selector'),
+    numberSelectorArrow = $('.arrow-up'),
+    dialog = $('.dialog'),
+    numberSelectorOpen = false,
+    cleaningUp = false,
     inputs,
+    spread = [1,2,3,4,5,6,7,8,9],
     aarowFunctions = {
         37: moveLeft,
         38: moveUp,
@@ -14,49 +20,54 @@
         40: moveDown
     };
 
-    $('.sudoku-row').each(
-        function(i,item) {
-            inputs = $(item).find('input');
-            rows.push(inputs);
-            inputs.each(
+    function initGrid() {
+        $('.sudoku-row').each(
                 function(i,item) {
-                    var column = columns[i];
-                    if (column) {
-                        columns[i].push(item);
-                    } else {
-                        columns[i] = [item];
-                    }
+                    inputs = $(item).find('input');
+                    rows.push(inputs);
+                    inputs.each(
+                        function(i,item) {
+                            var column = columns[i];
+                            if (column) {
+                                columns[i].push(item);
+                            } else {
+                                columns[i] = [item];
+                            }
+                        });
                 });
-        });
+        fillRandom();
+    }
 
     function bindUI() {
+        if (Modernizr.touch) {
+            // if mobile disable keyboard from popping up
+            $('input').prop('disabled', true);
 
-        $(document).on('mouseup',function() {
-            isMouseDown = false;
-            cleanupNumberSelector();
-        });
+            $('.main').on('vclick', function(e) {
+                currentTarget = $(e.target);
+                if( currentTarget.prop('tagName') === 'INPUT' &&
+                    (!numberSelectorOpen || inputTarget !== e.target) &&
+                    !cleaningUp) {
+                        cleanupHighlight();
+                        numberSelectorOpen = true;
+                        inputTarget = e.target;
+                        leftOffset = (((parseColumn(inputTarget)*9)+3.125));
+                        topOffset = ((parseRow(inputTarget)+1 * 9)+7);
+                        lastHighlighted = $(inputTarget).addClass("highlighted");
+                        numberSelectorArrow.css({left: leftOffset+'rem'});
+                        numberSelector.css({top: topOffset+'rem', left: '2rem'});
+                } else {
+                    cleanupNumberSelector();
+                }
+            });
 
-        $('.sudoku-grid').on('mousedown', function(e) {
-            isMouseDown = true;
-            inputTarget = e.target;
-            leftOffset = e.clientX-340;
-            topOffset = e.clientY+40;
-            numberSelector.css({top: topOffset+'px', left: leftOffset+'px'});
-        });
+            $('.number-selector').on('vclick', function(e) {
+                highlightedValue = $(e.target).data('value');
+                $(inputTarget).val(highlightedValue);
+                cleanupNumberSelector();
+            });
+        }
 
-    
-        $('.number-selector').on('mouseover', function(e) {
-            if(isMouseDown) {
-                cleanupHighlight();
-                lastHighlighted = $(e.target);
-                highlightedValue = lastHighlighted.data('value');
-                $(e.target).addClass("highlighted");
-            }
-        }).on('mouseup',function() {
-            isMouseDown = false;
-            $(inputTarget).val(highlightedValue);
-            cleanupNumberSelector();
-        });
 
         $('.sudoku-row').delegate('input', 'keydown', function(ev) {
             var keyCode = window.event ? ev.keyCode : ev.which,
@@ -71,11 +82,16 @@
                 }
             }
         });
+
+        $('.clear').on('click', promptClear);
+        $('.checkAnswer').on('click', checkAnswer);
+
+
     }
 
     function cleanupHighlight() {
         if (lastHighlighted) {
-            lastHighlighted.removeClass("highlighted");
+            $('.highlighted').removeClass('highlighted');
         }
     }
 
@@ -83,11 +99,14 @@
         highlightedValue = '';
         numberSelector.css({left:'-10000px'});
         cleanupHighlight();
-
+        if (!cleaningUp) {
+            cleaningUp = true;
+            setTimeout(function() {numberSelectorOpen = false; cleaningUp = false;}, 400);
+        }
     }
 
     function parseRow(node) {
-        return ~~($(node.parentNode.parentNode).data('row'));
+        return ~~($(node.parentNode.parentNode.parentNode).data('row'));
     }
 
     function parseColumn(node) {
@@ -138,14 +157,16 @@
         var inputValues, answer = false;
         $.each(l, function(i, item) {
             inputValues = $.map(item, function(input) {
-                return $(input).val();
+                return input.value;
             });
+
             inputValues.sort();
             len = inputValues.length; 
             val = 9;
 
             while(len--) {
                 if(~~inputValues[len] !== val--) {
+                    $(item).addClass('error');
                     answer = false;
                     // break out early
                     return answer;
@@ -157,5 +178,50 @@
         return answer;
     }
 
+    function checkAnswer() {
+        if (checkHasRangeOneToTen(rows) || checkHasRangeOneToTen(columns)) {
+            // show victory overlay + play again button
+        } else {
+            promptRestart();
+        }
+    }
+
+    function promptRestart() {
+        if(window.confirm("It looks like you aren't quite done yet!")) {
+        } else {
+        }
+        $('.error').removeClass('error');
+    }
+
+    function promptClear() {
+        if(window.confirm('Do you really want to clear your game?')) {
+            fillRandom();
+        }
+    }
+
+    function clearGrid() {
+        $('.error').removeClass('error');
+        $.each(rows, function(i,item) {
+            $.each(item, function(i,cell) {
+                cell.value = '';
+            });
+        });
+    }
+
+    function fillRandom() {
+        clearGrid();
+        var temp = [],rand,shuffled;
+        $.each(rows, function(i,row) {
+            rand = Math.floor(Math.random()*9);
+            row[rand].value = spread[i];
+            temp.push(rand);
+        });
+        $.each(temp, function(i,item) {
+            spread.push(spread.splice(item,1)[0]);
+        });
+    }
+
+    initGrid();
     bindUI();
-})();
+// })();
+

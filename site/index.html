@@ -25,7 +25,6 @@
                  <td> <input type="text" data-column="6" maxlength="1"></td>
                  <td> <input type="text" data-column="7" maxlength="1"></td>
                  <td> <input type="text" data-column="8" maxlength="1"></td>
-                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
              <tr class='sudoku-row' data-row="1">
@@ -38,7 +37,6 @@
                  <td> <input type="text" data-column="6" maxlength="1"></td>
                  <td> <input type="text" data-column="7" maxlength="1"></td>
                  <td> <input type="text" data-column="8" maxlength="1"></td>
-                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
              <tr class='sudoku-row' data-row="2">
@@ -51,7 +49,6 @@
                  <td> <input type="text" data-column="6" maxlength="1"></td>
                  <td> <input type="text" data-column="7" maxlength="1"></td>
                  <td> <input type="text" data-column="8" maxlength="1"></td>
-                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
              <tr class='sudoku-row' data-row="3">
@@ -64,7 +61,6 @@
                  <td> <input type="text" data-column="6" maxlength="1"></td>
                  <td> <input type="text" data-column="7" maxlength="1"></td>
                  <td> <input type="text" data-column="8" maxlength="1"></td>
-                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
              <tr class='sudoku-row' data-row="4">
@@ -77,7 +73,6 @@
                  <td> <input type="text" data-column="6" maxlength="1"></td>
                  <td> <input type="text" data-column="7" maxlength="1"></td>
                  <td> <input type="text" data-column="8" maxlength="1"></td>
-                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
              <tr class='sudoku-row' data-row="5">
@@ -90,7 +85,6 @@
                  <td> <input type="text" data-column="6" maxlength="1"></td>
                  <td> <input type="text" data-column="7" maxlength="1"></td>
                  <td> <input type="text" data-column="8" maxlength="1"></td>
-                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
              <tr class='sudoku-row' data-row="6">
@@ -103,7 +97,6 @@
                  <td> <input type="text" data-column="6" maxlength="1"></td>
                  <td> <input type="text" data-column="7" maxlength="1"></td>
                  <td> <input type="text" data-column="8" maxlength="1"></td>
-                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
              <tr class='sudoku-row' data-row="7">
@@ -116,7 +109,6 @@
                  <td> <input type="text" data-column="6" maxlength="1"></td>
                  <td> <input type="text" data-column="7" maxlength="1"></td>
                  <td> <input type="text" data-column="8" maxlength="1"></td>
-                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
              <tr class='sudoku-row' data-row="8">
@@ -129,30 +121,19 @@
                  <td> <input type="text" data-column="6" maxlength="1"></td>
                  <td> <input type="text" data-column="7" maxlength="1"></td>
                  <td> <input type="text" data-column="8" maxlength="1"></td>
-                 <td> <input type="text" data-column="9" maxlength="1"></td>
-             </tr>
-
-             <tr class='sudoku-row' data-row="9">
-                 <td> <input type="text" data-column="0" maxlength="1"></td>
-                 <td> <input type="text" data-column="1" maxlength="1"></td>
-                 <td> <input type="text" data-column="2" maxlength="1"></td>
-                 <td> <input type="text" data-column="3" maxlength="1"></td>
-                 <td> <input type="text" data-column="4" maxlength="1"></td>
-                 <td> <input type="text" data-column="5" maxlength="1"></td>
-                 <td> <input type="text" data-column="6" maxlength="1"></td>
-                 <td> <input type="text" data-column="7" maxlength="1"></td>
-                 <td> <input type="text" data-column="8" maxlength="1"></td>
-                 <td> <input type="text" data-column="9" maxlength="1"></td>
              </tr>
 
          </table>
+         <div class="button-container">
+             <button class='button button-left checkAnswer light'> Check Answer </button>
+             <button class='button button-right clear dark'> Clear </button>
+         </div>
      </div>
  </div>
-
-     <div class='number-selector'>
+    <div class="dialog"> </div>
+     <div class='number-selector centered'>
          <div class='arrow-up'> </div>
-         <div class='first-item number-selector-item' data-value="0"> 0 </div>
-         <div class='number-selector-item' data-value="1"> 1 </div>
+         <div class='first number-selector-item' data-value="1"> 1 </div>
          <div class='number-selector-item' data-value="2"> 2 </div>
          <div class='number-selector-item' data-value="3"> 3 </div>
          <div class='number-selector-item' data-value="4"> 4 </div>
@@ -164,7 +145,8 @@
      </div>
 
  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
- <script type="text/javascript" src="https//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+ <script type="text/javascript" src="http://modernizr.com/downloads/modernizr-latest.js"></script>
  <script type="text/javascript" src="bundle.js"></script>
  </body>
 </html>

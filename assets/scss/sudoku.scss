@@ -20,15 +20,13 @@ html, body {
 }
 
 %sudokuCell {
-    display: table-cell;
     text-align: center;
-    font-size: 7rem;
     width: 9rem;
+    font-size: inherit;
     height: 9rem;
 }
 
 %horizontallyCenter {
-    position: absolute;
     display: inline-block;
     text-align: center;
     width: 100%;
@@ -62,6 +60,7 @@ html, body {
     @extend %borderStyles;
     border-style: solid;
     table-layout: fixed;
+    font-size: 7rem;
     width: 81rem;
     height: 81rem;
 }
@@ -99,6 +98,7 @@ html, body {
 
 h1 {
     @extend %horizontallyCenter;
+    position: absolute;
     font-family: $ff;
     font-weight: bold;
     top: 0;
@@ -131,14 +131,15 @@ h1 {
     border-left: 1.4rem solid transparent;
     border-right: 1.4rem solid transparent;
     border-bottom: 1.4rem solid #f5f5dc;
-    top: 0.3rem;
+    top: -0.4rem;
     padding-bottom: 0.1em;
 }
 
 .number-selector {
     @extend %unselectable;
     position: absolute;
-    left: -100000rem;
+    display: none;
+    font-size: 7rem;
     width: 27.6rem;
     height: 27.6rem;
     z-index: 99;
@@ -202,6 +203,7 @@ input:disabled {
 
 .button-container {
     @extend %horizontallyCenter;
+    position: absolute;
     bottom: 1rem;
 }
 

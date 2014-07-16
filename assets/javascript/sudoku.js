@@ -1,4 +1,4 @@
-(function() {
+// (function() {
     var rows = [],
     columns = [],
     blocks = [],
@@ -40,8 +40,19 @@
                 column = columns[i];
                 blockNumber = Math.floor(i/3)+blockRow;
                 block = blocks[blockNumber];
-                (block && blocks[blockNumber].push(item)) ? null: blocks[blockNumber] = [item];
-                (column && columns[i].push(item)) ? null : columns[i] = [item];
+
+                if (block) {
+                    blocks[blockNumber].push(item);
+                } else {
+                    blocks[blockNumber] = [item];
+                }
+
+                if (column) {
+                    columns[i].push(item);
+                } else {
+                    columns[i] = [item];
+                }
+
             });
         });
         fillRandom();
@@ -281,4 +292,4 @@
     
     initGrid();
     bindUI();
-})();
+// })();

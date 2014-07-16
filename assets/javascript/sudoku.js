@@ -1,6 +1,7 @@
 (function() {
     var rows = [],
     columns = [],
+    blocks = [],
     lastHighlighted,
     selectedValue,
     inputTarget,
@@ -28,22 +29,22 @@
         'ZERO': 48,
         'NINE': 57
     };
-
-
     
     function initGrid() {
+        var column, block, blockNumber = 0, blockRow = 0;
         $('.sudoku-row').each(
                 function(i,item) {
                     inputs = $(item).find('input');
                     rows.push(inputs);
+                    blockRow = Math.floor(i/3)*3;
                     inputs.each(
                         function(i,item) {
-                            var column = columns[i];
-                            if (column) {
-                                columns[i].push(item);
-                            } else {
-                                columns[i] = [item];
-                            }
+                            column = columns[i];
+                            blockNumber = Math.floor(i/3)+blockRow;
+                            console.log(blockNumber);
+                            block = blocks[blockNumber];
+                            (block && blocks[blockNumber].push(item)) ? null: blocks[blockNumber] = [item];
+                            (column && columns[i].push(item)) ? null : columns[i] = [item];
                         });
                 });
         fillRandom();
@@ -229,7 +230,7 @@
     }
     
     function checkAnswer() {
-        if (checkHasRangeOneToTen(rows) || checkHasRangeOneToTen(columns)) {
+        if (checkHasRangeOneToTen(rows) || checkHasRangeOneToTen(columns) || checkHasRangeOneToTen(blocks)) {
             if (window.confirm('Great job you won! Would you like to play again?')) {
                 fillRandom(); 
             }

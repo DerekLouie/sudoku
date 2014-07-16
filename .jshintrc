@@ -73,6 +73,7 @@
     "sub"           : false,    // Tolerate all forms of subscript notation besides dot notation e.g. `dict['key']` instead of `dict.key`.
     "supernew"      : false,    // Tolerate `new function () { ... };` and `new Object;`.
     "validthis"     : false,    // Tolerate strict violations when the code is running in strict mode and you use this in a non-constructor function.
+    "-W086"         : true,     // Tolerate falls through for case statements.
     
     // == Environments ====================================================
     //

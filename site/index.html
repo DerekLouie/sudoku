@@ -1,152 +1,161 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Sudoku</title>
-  <meta name="Derek Louie" content="Sudoku">
-  <link rel="stylesheet" type="text/css" href="bundle.css">
- </head>
- <body>
- <div class="main" unselectable="on"> 
-     <div class="sudoku">
-     <div class="header">
-         <h1> Sudoku </h1>
-     </div>
-         <table class="sudoku-grid centered">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Sudoku</title>
+<meta name="Derek Louie" content="Sudoku">
+<link rel="stylesheet" type="text/css" href="bundle.css">
+</head>
+<body>
+<div class="main" unselectable="on">
+    <div class="sudoku">
+        <div class="header">
+            <h1> Sudoku </h1>
+        </div>
+        <table class="sudoku-grid centered">
 
-             <tr class='sudoku-row' data-row="0">
-                 <td> <input type="text" data-column="0" maxlength="1"></td>
-                 <td> <input type="text" data-column="1" maxlength="1"></td>
-                 <td> <input type="text" data-column="2" maxlength="1"></td>
-                 <td> <input type="text" data-column="3" maxlength="1"></td>
-                 <td> <input type="text" data-column="4" maxlength="1"></td>
-                 <td> <input type="text" data-column="5" maxlength="1"></td>
-                 <td> <input type="text" data-column="6" maxlength="1"></td>
-                 <td> <input type="text" data-column="7" maxlength="1"></td>
-                 <td> <input type="text" data-column="8" maxlength="1"></td>
-             </tr>
+            <tr class="sudoku-row" data-row="0">
+                <td> <input type="text" data-column="0" maxlength="1"></td>
+                <td> <input type="text" data-column="1" maxlength="1"></td>
+                <td> <input type="text" data-column="2" maxlength="1"></td>
+                <td> <input type="text" data-column="3" maxlength="1"></td>
+                <td> <input type="text" data-column="4" maxlength="1"></td>
+                <td> <input type="text" data-column="5" maxlength="1"></td>
+                <td> <input type="text" data-column="6" maxlength="1"></td>
+                <td> <input type="text" data-column="7" maxlength="1"></td>
+                <td> <input type="text" data-column="8" maxlength="1"></td>
+            </tr>
 
-             <tr class='sudoku-row' data-row="1">
-                 <td> <input type="text" data-column="0" maxlength="1"></td>
-                 <td> <input type="text" data-column="1" maxlength="1"></td>
-                 <td> <input type="text" data-column="2" maxlength="1"></td>
-                 <td> <input type="text" data-column="3" maxlength="1"></td>
-                 <td> <input type="text" data-column="4" maxlength="1"></td>
-                 <td> <input type="text" data-column="5" maxlength="1"></td>
-                 <td> <input type="text" data-column="6" maxlength="1"></td>
-                 <td> <input type="text" data-column="7" maxlength="1"></td>
-                 <td> <input type="text" data-column="8" maxlength="1"></td>
-             </tr>
+            <tr class="sudoku-row" data-row="1">
+                <td> <input type="text" data-column="0" maxlength="1"></td>
+                <td> <input type="text" data-column="1" maxlength="1"></td>
+                <td> <input type="text" data-column="2" maxlength="1"></td>
+                <td> <input type="text" data-column="3" maxlength="1"></td>
+                <td> <input type="text" data-column="4" maxlength="1"></td>
+                <td> <input type="text" data-column="5" maxlength="1"></td>
+                <td> <input type="text" data-column="6" maxlength="1"></td>
+                <td> <input type="text" data-column="7" maxlength="1"></td>
+                <td> <input type="text" data-column="8" maxlength="1"></td>
+            </tr>
 
-             <tr class='sudoku-row' data-row="2">
-                 <td> <input type="text" data-column="0" maxlength="1"></td>
-                 <td> <input type="text" data-column="1" maxlength="1"></td>
-                 <td> <input type="text" data-column="2" maxlength="1"></td>
-                 <td> <input type="text" data-column="3" maxlength="1"></td>
-                 <td> <input type="text" data-column="4" maxlength="1"></td>
-                 <td> <input type="text" data-column="5" maxlength="1"></td>
-                 <td> <input type="text" data-column="6" maxlength="1"></td>
-                 <td> <input type="text" data-column="7" maxlength="1"></td>
-                 <td> <input type="text" data-column="8" maxlength="1"></td>
-             </tr>
+            <tr class="sudoku-row" data-row="2">
+                <td> <input type="text" data-column="0" maxlength="1"></td>
+                <td> <input type="text" data-column="1" maxlength="1"></td>
+                <td> <input type="text" data-column="2" maxlength="1"></td>
+                <td> <input type="text" data-column="3" maxlength="1"></td>
+                <td> <input type="text" data-column="4" maxlength="1"></td>
+                <td> <input type="text" data-column="5" maxlength="1"></td>
+                <td> <input type="text" data-column="6" maxlength="1"></td>
+                <td> <input type="text" data-column="7" maxlength="1"></td>
+                <td> <input type="text" data-column="8" maxlength="1"></td>
+            </tr>
 
-             <tr class='sudoku-row' data-row="3">
-                 <td> <input type="text" data-column="0" maxlength="1"></td>
-                 <td> <input type="text" data-column="1" maxlength="1"></td>
-                 <td> <input type="text" data-column="2" maxlength="1"></td>
-                 <td> <input type="text" data-column="3" maxlength="1"></td>
-                 <td> <input type="text" data-column="4" maxlength="1"></td>
-                 <td> <input type="text" data-column="5" maxlength="1"></td>
-                 <td> <input type="text" data-column="6" maxlength="1"></td>
-                 <td> <input type="text" data-column="7" maxlength="1"></td>
-                 <td> <input type="text" data-column="8" maxlength="1"></td>
-             </tr>
+            <tr class="sudoku-row" data-row="3">
+                <td> <input type="text" data-column="0" maxlength="1"></td>
+                <td> <input type="text" data-column="1" maxlength="1"></td>
+                <td> <input type="text" data-column="2" maxlength="1"></td>
+                <td> <input type="text" data-column="3" maxlength="1"></td>
+                <td> <input type="text" data-column="4" maxlength="1"></td>
+                <td> <input type="text" data-column="5" maxlength="1"></td>
+                <td> <input type="text" data-column="6" maxlength="1"></td>
+                <td> <input type="text" data-column="7" maxlength="1"></td>
+                <td> <input type="text" data-column="8" maxlength="1"></td>
+            </tr>
 
-             <tr class='sudoku-row' data-row="4">
-                 <td> <input type="text" data-column="0" maxlength="1"></td>
-                 <td> <input type="text" data-column="1" maxlength="1"></td>
-                 <td> <input type="text" data-column="2" maxlength="1"></td>
-                 <td> <input type="text" data-column="3" maxlength="1"></td>
-                 <td> <input type="text" data-column="4" maxlength="1"></td>
-                 <td> <input type="text" data-column="5" maxlength="1"></td>
-                 <td> <input type="text" data-column="6" maxlength="1"></td>
-                 <td> <input type="text" data-column="7" maxlength="1"></td>
-                 <td> <input type="text" data-column="8" maxlength="1"></td>
-             </tr>
+            <tr class="sudoku-row" data-row="4">
+                <td> <input type="text" data-column="0" maxlength="1"></td>
+                <td> <input type="text" data-column="1" maxlength="1"></td>
+                <td> <input type="text" data-column="2" maxlength="1"></td>
+                <td> <input type="text" data-column="3" maxlength="1"></td>
+                <td> <input type="text" data-column="4" maxlength="1"></td>
+                <td> <input type="text" data-column="5" maxlength="1"></td>
+                <td> <input type="text" data-column="6" maxlength="1"></td>
+                <td> <input type="text" data-column="7" maxlength="1"></td>
+                <td> <input type="text" data-column="8" maxlength="1"></td>
+            </tr>
 
-             <tr class='sudoku-row' data-row="5">
-                 <td> <input type="text" data-column="0" maxlength="1"></td>
-                 <td> <input type="text" data-column="1" maxlength="1"></td>
-                 <td> <input type="text" data-column="2" maxlength="1"></td>
-                 <td> <input type="text" data-column="3" maxlength="1"></td>
-                 <td> <input type="text" data-column="4" maxlength="1"></td>
-                 <td> <input type="text" data-column="5" maxlength="1"></td>
-                 <td> <input type="text" data-column="6" maxlength="1"></td>
-                 <td> <input type="text" data-column="7" maxlength="1"></td>
-                 <td> <input type="text" data-column="8" maxlength="1"></td>
-             </tr>
+            <tr class="sudoku-row" data-row="5">
+                <td> <input type="text" data-column="0" maxlength="1"></td>
+                <td> <input type="text" data-column="1" maxlength="1"></td>
+                <td> <input type="text" data-column="2" maxlength="1"></td>
+                <td> <input type="text" data-column="3" maxlength="1"></td>
+                <td> <input type="text" data-column="4" maxlength="1"></td>
+                <td> <input type="text" data-column="5" maxlength="1"></td>
+                <td> <input type="text" data-column="6" maxlength="1"></td>
+                <td> <input type="text" data-column="7" maxlength="1"></td>
+                <td> <input type="text" data-column="8" maxlength="1"></td>
+            </tr>
 
-             <tr class='sudoku-row' data-row="6">
-                 <td> <input type="text" data-column="0" maxlength="1"></td>
-                 <td> <input type="text" data-column="1" maxlength="1"></td>
-                 <td> <input type="text" data-column="2" maxlength="1"></td>
-                 <td> <input type="text" data-column="3" maxlength="1"></td>
-                 <td> <input type="text" data-column="4" maxlength="1"></td>
-                 <td> <input type="text" data-column="5" maxlength="1"></td>
-                 <td> <input type="text" data-column="6" maxlength="1"></td>
-                 <td> <input type="text" data-column="7" maxlength="1"></td>
-                 <td> <input type="text" data-column="8" maxlength="1"></td>
-             </tr>
+            <tr class="sudoku-row" data-row="6">
+                <td> <input type="text" data-column="0" maxlength="1"></td>
+                <td> <input type="text" data-column="1" maxlength="1"></td>
+                <td> <input type="text" data-column="2" maxlength="1"></td>
+                <td> <input type="text" data-column="3" maxlength="1"></td>
+                <td> <input type="text" data-column="4" maxlength="1"></td>
+                <td> <input type="text" data-column="5" maxlength="1"></td>
+                <td> <input type="text" data-column="6" maxlength="1"></td>
+                <td> <input type="text" data-column="7" maxlength="1"></td>
+                <td> <input type="text" data-column="8" maxlength="1"></td>
+            </tr>
 
-             <tr class='sudoku-row' data-row="7">
-                 <td> <input type="text" data-column="0" maxlength="1"></td>
-                 <td> <input type="text" data-column="1" maxlength="1"></td>
-                 <td> <input type="text" data-column="2" maxlength="1"></td>
-                 <td> <input type="text" data-column="3" maxlength="1"></td>
-                 <td> <input type="text" data-column="4" maxlength="1"></td>
-                 <td> <input type="text" data-column="5" maxlength="1"></td>
-                 <td> <input type="text" data-column="6" maxlength="1"></td>
-                 <td> <input type="text" data-column="7" maxlength="1"></td>
-                 <td> <input type="text" data-column="8" maxlength="1"></td>
-             </tr>
+            <tr class="sudoku-row" data-row="7">
+                <td> <input type="text" data-column="0" maxlength="1"></td>
+                <td> <input type="text" data-column="1" maxlength="1"></td>
+                <td> <input type="text" data-column="2" maxlength="1"></td>
+                <td> <input type="text" data-column="3" maxlength="1"></td>
+                <td> <input type="text" data-column="4" maxlength="1"></td>
+                <td> <input type="text" data-column="5" maxlength="1"></td>
+                <td> <input type="text" data-column="6" maxlength="1"></td>
+                <td> <input type="text" data-column="7" maxlength="1"></td>
+                <td> <input type="text" data-column="8" maxlength="1"></td>
+            </tr>
 
-             <tr class='sudoku-row' data-row="8">
-                 <td> <input type="text" data-column="0" maxlength="1"></td>
-                 <td> <input type="text" data-column="1" maxlength="1"></td>
-                 <td> <input type="text" data-column="2" maxlength="1"></td>
-                 <td> <input type="text" data-column="3" maxlength="1"></td>
-                 <td> <input type="text" data-column="4" maxlength="1"></td>
-                 <td> <input type="text" data-column="5" maxlength="1"></td>
-                 <td> <input type="text" data-column="6" maxlength="1"></td>
-                 <td> <input type="text" data-column="7" maxlength="1"></td>
-                 <td> <input type="text" data-column="8" maxlength="1"></td>
-             </tr>
+            <tr class="sudoku-row" data-row="8">
+                <td> <input type="text" data-column="0" maxlength="1"></td>
+                <td> <input type="text" data-column="1" maxlength="1"></td>
+                <td> <input type="text" data-column="2" maxlength="1"></td>
+                <td> <input type="text" data-column="3" maxlength="1"></td>
+                <td> <input type="text" data-column="4" maxlength="1"></td>
+                <td> <input type="text" data-column="5" maxlength="1"></td>
+                <td> <input type="text" data-column="6" maxlength="1"></td>
+                <td> <input type="text" data-column="7" maxlength="1"></td>
+                <td> <input type="text" data-column="8" maxlength="1"></td>
+            </tr>
 
-         </table>
-         <div class="button-container">
-             <button class='button button-left checkAnswer light'> Check Answer </button>
-             <button class='button button-right clear dark'> Clear </button>
-         </div>
-     </div>
- </div>
-    <div class="dialog"> </div>
-     <div class='number-selector centered'>
-         <div class='arrow-up'> </div>
-         <div class='first number-selector-item' data-value="1"> 1 </div>
-         <div class='number-selector-item' data-value="2"> 2 </div>
-         <div class='number-selector-item' data-value="3"> 3 </div>
-         <div class='number-selector-item' data-value="4"> 4 </div>
-         <div class='number-selector-item' data-value="5"> 5 </div>
-         <div class='number-selector-item' data-value="6"> 6 </div>
-         <div class='number-selector-item' data-value="7"> 7 </div>
-         <div class='number-selector-item' data-value="8"> 8 </div>
-         <div class='number-selector-item' data-value="9"> 9 </div>
-     </div>
+        </table>
+        <div class="button-container">
+            <button class="button button-left check-answer light"> Check Answer </button>
+            <button class="button button-right clear dark"> Clear </button>
+        </div>
+    </div>
+</div>
+<div class="number-selector centered">
+    <div class="arrow-up">
+        <div class="arrow-up-filler"> </div>
+    </div>
+    <div class="number-selector-row first-row">
+        <div class="number-selector-item first-cell" data-value="1"> 1 </div>
+        <div class="number-selector-item" data-value="2"> 2 </div>
+        <div class="number-selector-item" data-value="3"> 3 </div>
+    </div>
 
- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
- <script type="text/javascript" src="http://modernizr.com/downloads/modernizr-latest.js"></script>
- <script type="text/javascript" src="bundle.js"></script>
- </body>
+    <div class="number-selector-row second-row">
+        <div class="number-selector-item first-cell" data-value="4"> 4 </div>
+        <div class="number-selector-item" data-value="5"> 5 </div>
+        <div class="number-selector-item" data-value="6"> 6 </div>
+
+    </div>
+    <div class="number-selector-row third-row">
+        <div class="number-selector-item first-cell" data-value="7"> 7 </div>
+        <div class="number-selector-item" data-value="8"> 8 </div>
+        <div class="number-selector-item" data-value="9"> 9 </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="http://modernizr.com/downloads/modernizr-latest.js"></script>
+<script type="text/javascript" src="bundle.js"></script>
+</body>
 </html>

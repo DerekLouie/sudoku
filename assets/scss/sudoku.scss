@@ -2,12 +2,13 @@ $dark:  #444444;
 $blue:  #2DB6CF;
 $white: #FFFFFF;
 $light: #999999;
+$ff: Arial,sans-serif;
 
 html, body {
     width: 100%;
     height: 100%;
     font-size: 62.5%;
-    font-family: Arial,sans-serif;
+    font-family: $ff;
 }
 
 %unselectable {
@@ -18,19 +19,23 @@ html, body {
     user-select: none;
 }
 
-%sudoku-cell {
-    font-size: 7rem;
-    text-align: center;
+%sudokuCell {
     display: table-cell;
+    text-align: center;
+    font-size: 7rem;
     width: 9rem;
     height: 9rem;
 }
 
 %horizontallyCenter {
-    width: 100%;
     position: absolute;
-    text-align: center;
     display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+ %borderStyles {
+    border-width: 0.1rem;
+    border-color: black;
 }
 
 .main {
@@ -41,64 +46,68 @@ html, body {
 }
 
 .sudoku {
-    padding-top:5rem;
-    height: 88rem;
     position: relative;
+    padding-top: 5rem;
+    height: 88rem;
 }
 
 .centered {
-    margin: auto;
     position: absolute;
+    margin: auto;
     left: 0;
     right: 1rem;
 }
 
 .sudoku-grid {
-    border-width: 0.1rem;
-    border-color: black;
+    @extend %borderStyles;
     border-style: solid;
     table-layout: fixed;
     width: 81rem;
     height: 81rem;
 }
 
-.sudoku-row td:nth-child(3n+4) {
-    border-left-width: 0.2rem;
-}
-
-.sudoku-row:nth-child(3n) {
+.sudoku-row { 
+    border-style: solid;
     border-color: black;
-    border-bottom-style: solid;
-    border-bottom-width: 0.2rem;
-}
 
+    td:nth-child(3n+1) {
+        border-left-width: 0.2rem;
+    }
+    td:last-child {
+        border-right-width: 0.2rem;
+    }
+    &:nth-child(3n) {
+        border-bottom-width: 0.2rem;
+    }
+    &:nth-child(1) {
+        border-top-width: 0.2rem;
+    }
+}
 .sudoku-row input {
-    @extend %sudoku-cell;
+    @extend %sudokuCell;
     outline: 0;
-    border:0;
-    margin:0;
-    padding:0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .sudoku-row td {
-    @extend %sudoku-cell;
-    border-width: 0.1rem;
-    border-color: black;
+    @extend %sudokuCell;
+    @extend %borderStyles;
     border-style: solid;
 }
 
 h1 {
     @extend %horizontallyCenter;
-    font-family: Arial,sans-serif;
-    top:0;
+    font-family: $ff;
+    font-weight: bold;
+    top: 0;
     padding: 1rem 0;
     font-size: 3rem;
-    font-weight: bold;
 }
 
 .arrow-up {
     position: absolute;
-    left: 0;
     top: -1.5rem;
 	width: 0;
 	height: 0;
@@ -107,33 +116,63 @@ h1 {
 	border-bottom: 1.5rem solid black;
 }
 
+.flip-arrow-down {
+    -ms-transform: rotate(180deg); 
+    -webkit-transform: rotate(180deg); 
+    transform: rotate(180deg); 
+    top: 27.7rem;
+}
+
+.arrow-up-filler {
+    position: absolute;
+    left: -1.4rem;
+    width: 0;
+    height: 0;
+    border-left: 1.4rem solid transparent;
+    border-right: 1.4rem solid transparent;
+    border-bottom: 1.4rem solid #f5f5dc;
+    top: 0.3rem;
+    padding-bottom: 0.1em;
+}
+
 .number-selector {
     @extend %unselectable;
     position: absolute;
-    left: -1000000rem;
-    width: 83rem;
-    height: 8rem;
+    left: -100000rem;
+    width: 27.6rem;
+    height: 27.6rem;
     z-index: 99;
 }
 
 .number-selector-item {
     @extend %unselectable;
-    @extend %sudoku-cell;
-    background-color: white;
-    border-width: 0.1rem;
-    border-color: black;
-    border-style: solid solid solid none;
-    margin-top: 1.3rem;
-    vertical-align: middle;
+    @extend %sudokuCell;
+    @extend %borderStyles;
     display: table-cell;
-}
-
-.first-item {
-    border-width: 0.1rem;
+    vertical-align: middle;
+    background-color: white;
+    border-width: 0.25rem;
     border-color: black;
-    border-left-style: solid;
+    margin-top: 1.3rem;
+    font-color: white;
+    background-color: #F5F5DC;
 }
 
+.first-row , .second-row, .third-row {
+    .number-selector-item {
+        border-style: solid solid none none;
+    }
+    .first-cell {
+        border-left-style: solid;
+    }
+}
+
+
+.third-row {
+    .number-selector-item {
+        border-bottom-style: solid;
+    }
+}
 .number-selector-item.highlighted, input.highlighted {
     background-color: yellow;
 }
@@ -141,9 +180,14 @@ h1 {
 .number-selector-item.error, input.error {
     background-color: red;
 }
+
+.number-selector-row {
+   display: inline;
+}
+
 // hiding the default jquery mobile loader
 .ui-loader {
-    display:none;
+    display: none;
 }
 
 .footer {
@@ -151,7 +195,7 @@ h1 {
     bottom: 0;
 }
 input:disabled {
-    -webkit-text-fill-color:black;
+    -webkit-text-fill-color: black;
     font-color: black;
     -webkit-opacity: 1;
 }
@@ -181,9 +225,10 @@ input:disabled {
   transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -webkit-transition: all 0.3s ease 0s;
+  z-index: 1;
   width: 41rem;
-  font-family: Arial,sans-serif;
-  text-align: center; /* DELETE WHEN WIDTH AUTO */
+  font-family: $ff;
+  text-align: center;
   &.dark {
     background: none repeat scroll 0 0 $light;
     color: $white;
@@ -202,11 +247,26 @@ input:disabled {
   }
 }
 
-@media (max-width: 51rem) {
+@media (max-width: 52rem) {
     .sudoku {
-        height: 93rem;
+        height: 105rem;
     }
     .button {
-       width: 80.5rem;
+       width: 78.5rem;
+       font-size: 3rem;
+       line-height: 4rem;
+       padding: 2rem 1rem;
+    }
+}
+
+.touch {
+    .sudoku {
+        height:105rem;
+    }
+    .button {
+       width: 82.5rem;
+       font-size: 3rem;
+       line-height: 5rem;
+       padding: 2rem 1rem;
     }
 }

@@ -202,7 +202,7 @@ input:disabled {
 
 .button-container {
     @extend %horizontallyCenter;
-    bottom: 2rem;
+    bottom: 1rem;
 }
 
 .button {
@@ -226,7 +226,7 @@ input:disabled {
   -moz-transition: all 0.3s ease 0s;
   -webkit-transition: all 0.3s ease 0s;
   z-index: 1;
-  width: 41rem;
+  width: 41.1rem;
   font-family: $ff;
   text-align: center;
   &.dark {

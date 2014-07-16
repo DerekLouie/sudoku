@@ -32,20 +32,18 @@
     
     function initGrid() {
         var column, block, blockNumber = 0, blockRow = 0;
-        $('.sudoku-row').each(
-                function(i,item) {
-                    inputs = $(item).find('input');
-                    rows.push(inputs);
-                    blockRow = Math.floor(i/3)*3;
-                    inputs.each(
-                        function(i,item) {
-                            column = columns[i];
-                            blockNumber = Math.floor(i/3)+blockRow;
-                            block = blocks[blockNumber];
-                            (block && blocks[blockNumber].push(item)) ? null: blocks[blockNumber] = [item];
-                            (column && columns[i].push(item)) ? null : columns[i] = [item];
-                        });
-                });
+        $('.sudoku-row').each( function(i,item) {
+            inputs = $(item).find('input');
+            rows.push(inputs);
+            blockRow = Math.floor(i/3)*3;
+            inputs.each( function(i,item) {
+                column = columns[i];
+                blockNumber = Math.floor(i/3)+blockRow;
+                block = blocks[blockNumber];
+                (block && blocks[blockNumber].push(item)) ? null: blocks[blockNumber] = [item];
+                (column && columns[i].push(item)) ? null : columns[i] = [item];
+            });
+        });
         fillRandom();
     }
     

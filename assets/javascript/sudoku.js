@@ -229,7 +229,7 @@
     }
     
     function checkAnswer() {
-        if (checkHasRangeOneToTen(rows) || checkHasRangeOneToTen(columns) || checkHasRangeOneToTen(blocks)) {
+        if (checkHasRangeOneToTen(rows) && checkHasRangeOneToTen(columns) && checkHasRangeOneToTen(blocks)) {
             if (window.confirm('Great job you won! Would you like to play again?')) {
                 fillRandom(); 
             }

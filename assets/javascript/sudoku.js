@@ -41,7 +41,6 @@
                         function(i,item) {
                             column = columns[i];
                             blockNumber = Math.floor(i/3)+blockRow;
-                            console.log(blockNumber);
                             block = blocks[blockNumber];
                             (block && blocks[blockNumber].push(item)) ? null: blocks[blockNumber] = [item];
                             (column && columns[i].push(item)) ? null : columns[i] = [item];
